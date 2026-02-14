@@ -15,10 +15,12 @@ const (
 	RESET_COLOR     = "\033[0m"
 )
 
+var dir string
+
 // ________________________________________________________________________FUNCS
 
 func main() {
-	port := 1234
+	port := 1024
 	ip := getLocalIp()
 
 	execPath, err := filepath.Abs(os.Args[0])
@@ -26,7 +28,8 @@ func main() {
 		panic(err.Error())
 	}
 
-	uploadedFolder := filepath.Join(filepath.Dir(execPath), "uploaded")
+	dir = filepath.Dir(execPath)
+	uploadedFolder := filepath.Join(dir, "uploaded")
 
 	os.MkdirAll(uploadedFolder, 0755)
 
@@ -77,7 +80,7 @@ func getLocalIp() string {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
-		http.ServeFile(w, r, "index.html")
+		http.ServeFile(w, r, filepath.Join(dir, "index.html"))
 		return
 	}
 
