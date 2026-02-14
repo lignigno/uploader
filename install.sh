@@ -11,3 +11,4 @@ go build -o $PROGECT_DIR/uploader $PROJECT_DIR/main.go
 echo "alias uploader=\"$PROGECT_DIR/uploader\"" >> "$HOME/.zshrc"
 echo "alias uploader=\"$PROGECT_DIR/uploader\"" >> "$HOME/.bashrc"
 
+
