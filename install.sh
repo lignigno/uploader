@@ -1,9 +1,8 @@
 #!/bin/bash
 
-PROGECT_DIR="$HOME/uploader"
+PROJECT_DIR="$HOME/uploader"
 
-cd $PROGECT_DIR
-go build -o $PROJECT_DIR/main.go
+go build -o "$PROJECT_DIR/uploader" "$PROJECT_DIR/main.go"
 
 rm -rf $PROGECT_DIR/.git*
 rm -rf $PROGECT_DIR/imgs
