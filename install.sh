@@ -2,7 +2,8 @@
 
 PROGECT_DIR="$HOME/uploader"
 
-go build -o $PROGECT_DIR/uploader $PROJECT_DIR/main.go
+cd $PROGECT_DIR
+go build -o $PROJECT_DIR/main.go
 
 rm -rf $PROGECT_DIR/.git*
 rm -rf $PROGECT_DIR/imgs
