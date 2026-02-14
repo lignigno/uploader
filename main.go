@@ -96,7 +96,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 		ts := time.Now().Format("20060102_150405")
 		newName := fmt.Sprintf("%s_%s", ts, header.Filename)
-		dstPath := filepath.Join("uploaded", newName)
+		folder := filepath.Join(dir, "uploaded")
+		dstPath := filepath.Join(folder, newName)
 
 		dst, err := os.Create(dstPath)
 		if err != nil {
