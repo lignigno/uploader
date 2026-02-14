@@ -10,7 +10,7 @@
 ```
 git clone https://github.com/lignigno/uploader.git ~/uploader && \
 ~/uploader/install.sh && \
-alias uploader="go run ~/uploader/main.go"
+alias uploader="~/uploader/uploader"
 ```
 
 # USAGE
