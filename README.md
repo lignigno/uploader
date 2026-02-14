@@ -8,7 +8,7 @@
 
 # INSTALL
 ```
-git clone <url> ~/uploader && \
+git clone https://github.com/lignigno/uploader.git ~/uploader && \
 install.sh && \
 alias uploader="go run ~/uploader/main.go"
 ```

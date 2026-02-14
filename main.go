@@ -20,7 +20,15 @@ const (
 func main() {
 	port := 1023
 	ip := getLocalIp()
-	os.MkdirAll("uploaded", 0755)
+
+	execPath, err := filepath.Abs(os.Args[0])
+	if err != nil {
+		panic(err.Error())
+	}
+
+	uploadedFolder := filepath.Join(filepath.Dir(execPath), "uploaded")
+
+	os.MkdirAll(uploadedFolder, 0755)
 
 	http.HandleFunc("/", homeHandler)
 
