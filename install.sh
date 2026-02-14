@@ -8,6 +8,7 @@ rm -rf $PROJECT_DIR/.git*
 rm -rf $PROJECT_DIR/imgs
 rm -rf $PROJECT_DIR/README.md
 rm -rf $PROJECT_DIR/main.go
+rm -rf $PROJECT_DIR/install.sh
 
 echo "alias uploader=\"$PROJECT_DIR/uploader\"" >> "$HOME/.zshrc"
 echo "alias uploader=\"$PROJECT_DIR/uploader\"" >> "$HOME/.bashrc"

@@ -18,7 +18,7 @@ const (
 // ________________________________________________________________________FUNCS
 
 func main() {
-	port := 1023
+	port := 1234
 	ip := getLocalIp()
 
 	execPath, err := filepath.Abs(os.Args[0])
