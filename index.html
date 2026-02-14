@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Uploader</title>
+<style>
+body {
+	margin: 0;
+	height: 100vh;
+	background-color: #252629;
+	color: #ff007e;
+	display: flex;
+	font-family: Arial, Helvetica, sans-serif;
+	word-spacing: 50px;
+	justify-content: center;
+	align-items: center;
+	font-size: 120px;
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+}
+
+#creator {
+	position: absolute;
+	background-color: #000;
+	top: 10px;
+	left: 10px;
+	font-size: 16px;
+	font-weight: normal;
+	word-spacing: normal;
+}
+</style>
+</head>
+<body>
+<div id="creator">
+	Created by lignigno
+</div>
+PUSH FILES
+<input type="file" id="fileInput" style="display:none">
+
+<script>
+const input = document.getElementById("fileInput");
+
+document.body.onclick = () => input.click();
+
+document.body.ondragover = e => e.preventDefault();
+
+document.body.ondrop = e => {
+	e.preventDefault();
+	upload(e.dataTransfer.files[0]);
+};
+
+input.onchange = () => {
+	upload(input.files[0]);
+	input.value = "";
+};
+
+function upload(file) {
+	const formData = new FormData();
+	formData.append("file", file);
+
+	fetch("/", {
+		method: "POST",
+		body: formData
+	});
+}
+</script>
+</body>
+</html>
